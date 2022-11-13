@@ -8,15 +8,21 @@
 - Файл 4.c
 
 
-![img](/image1.png)
+![img](/img1.png)
 
-- Для получения исполняемого (a.out)  и ассемблер (main.s) файлов вводим в командную строку команды:
+- Для получения исполняемого (a.out)  и ассемблер (4.s) файлов вводим в командную строку команды:
 
-$gcc -O0 -Wall -fno-asynchronous-unwind-tables main.c -o main
+$gcc -O0 -Wall -fno-asynchronous-unwind-tables 4.c -o 4
 
-$gcc -O0 -Wall -fno-asynchronous-unwind-tables -S main.c -o main.s
+$gcc -O0 -Wall -fno-asynchronous-unwind-tables -S 4.c -o 4.s
 
-$gcc main.s -o
+$gcc 4.s -o
+
+Лишние макросы были убраны за счёт использования аргументов командной строки.
+
+gcc -masm=intel -fno-asynchronous-unwind-tables -fno-jump-tables -fno-stack-protector -fno-exceptions -S 4.c
+
+Также файл 4.s содержит комментарии
 
 - Все проведенные тесты верны, значит программа работает корректно
 
